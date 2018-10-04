@@ -12,6 +12,7 @@
 		2E977C532165FDAC00989D4D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2E977C512165FDAC00989D4D /* Main.storyboard */; };
 		2E977C552165FDAE00989D4D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2E977C542165FDAE00989D4D /* Assets.xcassets */; };
 		2E977C582165FDAE00989D4D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2E977C562165FDAE00989D4D /* LaunchScreen.storyboard */; };
+		2E977C612166069E00989D4D /* PushNotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E977C602166069E00989D4D /* PushNotificationManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,8 @@
 		2E977C542165FDAE00989D4D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2E977C572165FDAE00989D4D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2E977C592165FDAE00989D4D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2E977C5F2165FDFF00989D4D /* PushManager.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = PushManager.entitlements; sourceTree = "<group>"; };
+		2E977C602166069E00989D4D /* PushNotificationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PushNotificationManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,12 +57,14 @@
 		2E977C4C2165FDAC00989D4D /* PushManager */ = {
 			isa = PBXGroup;
 			children = (
+				2E977C5F2165FDFF00989D4D /* PushManager.entitlements */,
 				2E977C4D2165FDAC00989D4D /* AppDelegate.swift */,
 				2E977C4F2165FDAC00989D4D /* ViewController.swift */,
 				2E977C512165FDAC00989D4D /* Main.storyboard */,
 				2E977C542165FDAE00989D4D /* Assets.xcassets */,
 				2E977C562165FDAE00989D4D /* LaunchScreen.storyboard */,
 				2E977C592165FDAE00989D4D /* Info.plist */,
+				2E977C602166069E00989D4D /* PushNotificationManager.swift */,
 			);
 			path = PushManager;
 			sourceTree = "<group>";
@@ -96,6 +101,11 @@
 				TargetAttributes = {
 					2E977C492165FDAC00989D4D = {
 						CreatedOnToolsVersion = 10.0;
+						SystemCapabilities = {
+							com.apple.Push = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -135,6 +145,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2E977C612166069E00989D4D /* PushNotificationManager.swift in Sources */,
 				2E977C502165FDAC00989D4D /* ViewController.swift in Sources */,
 				2E977C4E2165FDAC00989D4D /* AppDelegate.swift in Sources */,
 			);
@@ -282,6 +293,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = PushManager/PushManager.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = G63A5N8Y3S;
 				INFOPLIST_FILE = PushManager/Info.plist;
@@ -300,6 +312,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = PushManager/PushManager.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = G63A5N8Y3S;
 				INFOPLIST_FILE = PushManager/Info.plist;
