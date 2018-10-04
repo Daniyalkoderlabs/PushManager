@@ -89,10 +89,32 @@ class AppDelegate: UIResponder, UIApplicationDelegate,UNUserNotificationCenterDe
 
     func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable : Any]) {
         
+        
+       
+        
         PushNotificationManager.sharedIntance.passPushInfo(info: userInfo)
         
         
         
+    }
+    
+    func application(_ application: UIApplication, handleEventsForBackgroundURLSession identifier: String, completionHandler: @escaping () -> Void) {
+        print(identifier)
+    }
+
+    /*
+     {
+     "aps" : {
+     "content-available" : 1
+     },
+     "data-id" : 345
+     }
+     */
+    
+    func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable : Any], fetchCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
+        if UIApplication.shared.applicationState == .background {
+            print(  "App is in backgroud"   )
+        }
     }
     
 
